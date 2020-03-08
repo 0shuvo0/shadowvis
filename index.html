@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="">
+	<meta name="author" content="MdShuvo">
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="">
+	<link rel="stylesheet" href="css/style.css">
+	<title>ShadowVis</title>
+</head>
+<body>
+<div id="app" v-cloak>
+	<div class="container" v-bind:style="{ background: bgColor }">
+		<div class="preview section">
+			<div class="preview-el" v-bind:style="{ background: boxColor, boxShadow: shadows, borderRadius: boxRadius + '%' }"></div>
+		</div>
+		<div class="control section">
+			
+			<div v-for="(layer, index) in shadowModel">
+				<div class="layer-ctrl">
+					<p class="layer-close"><i v-on:click="removeLayer(index)" v-if="shadowModel.length > 1">&times;</i></p>
+					<div class="input-group">
+						<label>X Axis: {{shadowModel[index].shadowX}}</label>
+						<input class="shadow-x" type="range" min="-50" max="50" value="0" v-model="shadowModel[index].shadowX">
+					</div>
+					<div class="input-group">
+						<label>Y Axis: {{shadowModel[index].shadowY}}</label>
+						<input class="shadow-y" type="range" min="-50" max="50" value="0" v-model="shadowModel[index].shadowY">
+					</div>
+					<div class="input-group">
+						<label>Spread: {{shadowModel[index].spread}}</label>
+						<input class="shadow-spread" type="range" min="0" max="50" value="0" v-model="shadowModel[index].spread">
+						</div>
+					<div class="input-group">
+						<label>Blur: {{shadowModel[index].blur}}</label>
+						<input class="shadow-blur" type="range" min="0" max="50" value="0" v-model="shadowModel[index].blur">
+					</div>
+					<div class="input-group">
+						<label>Inset: {{shadowModel[index].shadowInset}}</label>
+						<input class="shadow-inset" type="checkbox" v-model="shadowModel[index].shadowInset">
+					</div>
+					<div class="input-group">
+						<label>Shadow color: {{shadowModel[index].shadowColor}}</label>
+						<input class="shadow-color" type="color" v-model="shadowModel[index].shadowColor">
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="input-btns">
+				<button class="btn" v-on:click="addLayer()">add layer</button>
+				<button class="btn" v-on:click="save()">{{saveBtnText}}</button>
+			</div>
+			
+			<div class="layer-ctrl">
+				<div class="input-group">
+					<label>Box radius: {{(boxRadius * 2)+ "%"}}</label>
+					<input class="box-radius" type="range" min="0" max="50" value="0" v-model="boxRadius">
+				</div>
+				<div class="input-group">
+					<label>Box color: {{boxColor}}</label>
+					<input class="box-color" type="color" v-model="boxColor">
+				</div>
+				<div class="input-group">
+					<label>Background color: {{bgColor}}</label>
+					<input class="bg-color" type="color" v-model="bgColor">
+				</div>
+			</div>
+			
+			<div class="layer-ctrl">
+				<div class="input-group">
+					<label>Generated code:</label>
+					<label>box-shadow: {{shadows}}</label>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+<script src="js/vue.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
+ 
