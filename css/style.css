@@ -67,20 +67,22 @@ a:hover, button:hover {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .container .section {
    height: 100vh;
 }
 
+
 .control{
 	width: 300px;
 }
 .preview{
+	width: calc(100% - 300px);
 	padding-top: 125px;
 	display: flex;
 	justify-content: center;
-	width: calc(100% - 300px);
 }
 
 .container .preview-el {
@@ -144,6 +146,14 @@ a:hover, button:hover {
 }
 
 
+
+
+.code-prop{
+	color: #FF004B;
+}
+.code-val{
+	color: #FFAD00;
+}
 
 
 
