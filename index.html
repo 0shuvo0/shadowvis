@@ -2,12 +2,10 @@
 <html lang="en">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-	<meta name="description" content="">
+	<meta name="description" content="Shadowvis is a interactive tool that let's you visually create complex shaows & generates code for it.">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="">
-	<meta name="author" content="MdShuvo">
+	<meta name="author" content="Md Shuvo">
 	<meta name="robots" content="index, follow" />
-	<link rel="shortcut icon" href="">
 	<link rel="stylesheet" href="css/style.css">
 	<title>ShadowVis</title>
 </head>
@@ -23,20 +21,20 @@
 				<div class="layer-ctrl">
 					<p class="layer-close"><i v-on:click="removeLayer(index)" v-if="shadowModel.length > 1">&times;</i></p>
 					<div class="input-group">
-						<label>X Axis: {{shadowModel[index].shadowX}}</label>
+						<label>X Axis: {{shadowModel[index].shadowX}}px</label>
 						<input class="shadow-x" type="range" min="-50" max="50" value="0" v-model="shadowModel[index].shadowX">
 					</div>
 					<div class="input-group">
-						<label>Y Axis: {{shadowModel[index].shadowY}}</label>
+						<label>Y Axis: {{shadowModel[index].shadowY}}px</label>
 						<input class="shadow-y" type="range" min="-50" max="50" value="0" v-model="shadowModel[index].shadowY">
 					</div>
 					<div class="input-group">
-						<label>Spread: {{shadowModel[index].spread}}</label>
-						<input class="shadow-spread" type="range" min="0" max="50" value="0" v-model="shadowModel[index].spread">
-						</div>
-					<div class="input-group">
-						<label>Blur: {{shadowModel[index].blur}}</label>
+						<label>Blur: {{shadowModel[index].blur}}px</label>
 						<input class="shadow-blur" type="range" min="0" max="50" value="0" v-model="shadowModel[index].blur">
+					</div>
+					<div class="input-group">
+						<label>Spread: {{shadowModel[index].spread}}px</label>
+						<input class="shadow-spread" type="range" min="0" max="50" value="0" v-model="shadowModel[index].spread">
 					</div>
 					<div class="input-group">
 						<label>Inset: {{shadowModel[index].shadowInset}}</label>
